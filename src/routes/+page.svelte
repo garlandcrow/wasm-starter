@@ -1,2 +1,10 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+	import init, { add } from '../../hellowasm/pkg';
+</script>
+
+{#await init()}
+	loading wasm bundle...
+{:then _module}
+	<h1>Welcome to SvelteKit</h1>
+	<span>wasm: 2 + 2 = {add(2, 2)}</span>
+{/await}
