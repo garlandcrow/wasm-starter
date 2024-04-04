@@ -1,11 +1,10 @@
-import type { PageLoad } from './$types';
-import init from '../../../hellowasm/pkg';
+import init from '$hellowasm';
 
 export const ssr = false;
 
-export const load: PageLoad = async function () {
+export async function load({ params }) {
 	return {
 		// use sveltekit page load to call init so we dont have to in the page
 		wasm: await init()
 	};
-};
+}

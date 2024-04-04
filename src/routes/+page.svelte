@@ -1,6 +1,6 @@
 <script lang="ts">
 	// import init and the function you want
-	import init, { add } from '../../hellowasm/pkg';
+	import init, { add } from '$hellowasm';
 </script>
 
 {#await init()}

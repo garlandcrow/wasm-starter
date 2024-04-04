@@ -1,5 +1,5 @@
 <script lang="ts">
-	import init from '../../../hellowasm/pkg';
+	import init from '$hellowasm';
 </script>
 
 {#await init()}
